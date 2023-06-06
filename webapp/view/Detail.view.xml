@@ -48,9 +48,9 @@
             <f:SimpleForm>
                 <f:content>
                     <Label text="{i18n>ID}" />
-                    <Text text="{ID}" />
+                    <Text text="{Id}" />
                     <Label text="{i18n>type}" />
-                    <Input value="{type}" />
+                    <Input value="{Type}" />
                     <Label text="{i18n>MovDate}." />
                     <DatePicker value="{ path: 'MovDate', type: 'sap.ui.model.type.Date' }" displayFormat="dd.MM.yyyy" />
                     <Label text="{i18n>ChgDate}" />
