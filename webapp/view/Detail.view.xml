@@ -47,8 +47,12 @@
          <semantic:content>
             <f:SimpleForm>
                 <f:content>
-                    <Label text="{i18n>ID}" />
-                    <Text text="{Id}" />
+                    <!-- <Label text="{i18n>ID}"  />
+                    <Text text="{Id}" /> -->
+                    <Label text="{i18n>ID}" visible="{detailView>/new}" />
+                    <Input value="{Id}" visible="{detailView>/new}" />
+                    <Label text="{i18n>ID}" visible="{= !${detailView>/new} }" />
+                    <Text text="{Id}" visible="{= !${detailView>/new} }" />
                     <Label text="{i18n>type}" />
                     <Input value="{Type}" />
                     <Label text="{i18n>MovDate}." />
@@ -68,7 +72,7 @@
         </semantic:content>
 
         <semantic:footerCustomActions>
-			<Button text="Save" press="onSave" />
+			<Button text="Update" press="onSave" />
         </semantic:footerCustomActions>
 
     </semantic:SemanticPage>
