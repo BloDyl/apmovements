@@ -73,6 +73,8 @@
 
         <semantic:footerCustomActions>
 			<Button text="Update" press="onSave" />
+            <Button text="Delete" press="onDelete" visible="{= !${detailView>/new} }"/>
+			<Button text="Cancel" press="onCancel" visible="{detailView>/new}"/>
         </semantic:footerCustomActions>
 
     </semantic:SemanticPage>
