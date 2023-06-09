@@ -78,23 +78,25 @@ sap.ui.define(
       onDelete: function () {
         this.getModel("detailView").setProperty("/busy", true);
         this.getModel().remove(this.getView().getBindingContext().getPath(), {
-            success: (result) => {
-                this.getModel("detailView").setProperty("/busy", false);
-                sap.m.MessageToast.show(this.getResourceBundle().getText("deleted"));
-                this.getRouter().navTo("list");
-            },
-            error: (error) => {
-                this.getModel("detailView").setProperty("/busy", false);
-                console.error(error);
-                sap.m.MessageBox.error(error.responseText);
-            }
-        })
-    },
+          success: (result) => {
+            this.getModel("detailView").setProperty("/busy", false);
+            sap.m.MessageToast.show(
+              this.getResourceBundle().getText("deleted")
+            );
+            this.getRouter().navTo("list");
+          },
+          error: (error) => {
+            this.getModel("detailView").setProperty("/busy", false);
+            console.error(error);
+            sap.m.MessageBox.error(error.responseText);
+          },
+        });
+      },
 
-    onCancel: function () {
+      onCancel: function () {
         this.getModel().resetChanges();
         this.getRouter().navTo("list");
-    },
+      },
 
       /* =========================================================== */
       /* begin: internal methods                                     */
@@ -163,6 +165,9 @@ sap.ui.define(
 
         this.getView().bindElement({
           path: sObjectPath,
+          parameters: {
+            expand: "ToMov_item",
+          },
           events: {
             change: this._onBindingChange.bind(this),
             dataRequested: function () {
