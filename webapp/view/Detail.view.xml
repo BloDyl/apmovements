@@ -57,13 +57,10 @@
 
                     <Label text="{i18n>MovDate}." />
                         <DatePicker value="{ path: 'MovDate', type: 'sap.ui.model.type.Date' }" displayFormat="dd.MM.yyyy" />
-                        <!-- krijg mijn gegevens van sy-datum  niet door voor nieuwe create
-                        Hierdoor kan ik de input velden bij path/new niet weghalen anders krijg ik een error
-                        Het veld wordt echter wel aangepast naar de waarde van vandaag maar verwacht nog een input -->
+                     
                     <Label text="{i18n>ChgDate}" visible="{= !${detailView>/new}}" />
                     <Text text="{ path: 'ChgDate', type: 'sap.ui.model.type.Date' }"  visible="{= !${detailView>/new}}" />
-                    <Label text="{i18n>ChgDate}" visible="{detailView>/new}" />
-                    <DatePicker value="{ path: 'ChgDate', type: 'sap.ui.model.type.Date' }" visible="{detailView>/new}" editable="{detailView>/new}" />
+                    
                     <Label text="{i18n>ChgUser}" visible="{= !${detailView>/new}}" />
                         <Text text="{ChgUser}"  visible="{= !${detailView>/new}}" />
                     <Label text="{i18n>Partner}" />

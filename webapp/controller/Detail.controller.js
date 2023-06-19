@@ -124,10 +124,8 @@ sap.ui.define(
             properties: {
               Id: "",
               Type: "",
-              MovDate: "",
-              ChgDate: "",
-              ChgUser: "",
-              Partner: "",
+              MovDate: "dd/mm/yyyy",
+              Partner: "145545",
               Location: "",
               Finished: false,
             },
