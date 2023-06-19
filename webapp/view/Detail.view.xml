@@ -48,26 +48,24 @@
          <VBox>
             <f:SimpleForm>
                 <f:content>
-                    <!-- <Label text="{i18n>ID}"  />
-                    <Text text="{Id}" /> -->
                     <Label text="{i18n>ID}" visible="{detailView>/new}" />
-                    <Input value="{Id}" visible="{detailView>/new}" />
-                        <Label text="{i18n>ID}" visible="{= !${detailView>/new} }" />
+                        <Input value="{Id}" visible="{detailView>/new}" editable="{detailView>/new}" />
+                    <Label text="{i18n>ID}" visible="{= !${detailView>/new} }" />
                         <Text text="{Id}" visible="{= !${detailView>/new} }" />
-                        <Label text="{i18n>type}" />
-                    <Input value="{Type}" />
-                        <Label text="{i18n>MovDate}." />
+                    <Label text="{i18n>type}" />
+                        <Input value="{Type}" />
+                    <Label text="{i18n>MovDate}." />
                         <DatePicker value="{ path: 'MovDate', type: 'sap.ui.model.type.Date' }" displayFormat="dd.MM.yyyy" />
-                        <Label text="{i18n>ChgDate}" />
-                        <DatePicker value="{ path: 'ChgDate', type: 'sap.ui.model.type.Date' }" displayFormat="dd.MM.yyyy" />
-                        <Label text="{i18n>ChgUser}" />
-                    <Input value="{ChgUser}" />
-                        <Label text="{i18n>Partner}" />
-                    <Input value="{Partner}" />
-                        <Label text="{i18n>Location}" />
-                    <Input value="{Location}" />
-                        <Label text="{i18n>Finished}" />
-                    <Input value="{Finished}" />
+                    <Label text="{i18n>ChgDate}" />
+                        <DatePicker value="{ path: 'ChgDate', type: 'sap.ui.model.type.Date' }" displayFormat="dd.MM.yyyy" editable="{detailView>/new}" />
+                    <Label text="{i18n>ChgUser}" />
+                        <Input value="{ChgUser}" editable="{detailView>/new}" />
+                    <Label text="{i18n>Partner}" />
+                        <Input value="{Partner}" />
+                    <Label text="{i18n>Location}" />
+                        <Input value="{Location}" />
+                     <Label text="{i18n>Finished}" />
+                        <CheckBox selected="{Finished}" />
                 </f:content>
             </f:SimpleForm>
             <Table inset="false" items="{ path: 'ToMov_item' }">
